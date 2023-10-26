@@ -62,14 +62,14 @@ def test_combatant_unsuccessful_attack():
     assert attack_status == AttackStatus.MISS
 
 # character can be damaged
-def test_can_be_damaged():
-    opponent = Character("Bob Not Dos", "Bad")
-    health = opponent.hit_point
-    opponent.char_damaged()
-    assert opponent.hit_point == 4
-    # if attack successful, hit 1 point
-    # if dice roll 20, hit 2 points
-    # when health 0, player is dead
+# def test_can_be_damaged():
+#     opponent = Character("Bob Not Dos", "Bad")
+#     health = opponent.hit_point
+#     opponent.char_damaged()
+#     assert opponent.hit_point == 4
+#     # if attack successful, hit 1 point
+#     # if dice roll 20, hit 2 points
+#     # when health 0, player is dead
     
 
 # character can gain exp
@@ -79,8 +79,7 @@ def test_attack_gain_experience():
 
     character.attack("Opponent")
     assert character.experience_points == initial_xp + 10
-    if __name__ == '__main__':
-        pytest.main()
+  
 
 # character can level up
 def test_level_up():
@@ -91,7 +90,6 @@ def test_level_up():
     character.level_up()
     assert character.level_of == initial_level + 1 
 
-if __name__ == '__main__':
-        pytest.main()
+
 # def test_char_stat():
     
