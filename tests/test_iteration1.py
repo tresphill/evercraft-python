@@ -92,4 +92,12 @@ def test_level_up():
 
 
 # def test_char_stat():
-    
+def test_set_ability_score_valid():
+    character = Character("Bob", "Good")
+    character.set_ability_score("Strength", 15)
+    assert character.abilities['Strength'] == 15
+
+def test_get_ability_modifier():
+    character = Character("Eve", "Neutral")
+    character.set_ability_score("Intelligence", 5)
+    assert character.get_ability_modifier("Intelligence") == -3
