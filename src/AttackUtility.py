@@ -1,4 +1,4 @@
-from src.AttackStatus import AttackStatus
+from AttackStatus import AttackStatus
 
 class AttackUtility:
 
