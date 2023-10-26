@@ -55,3 +55,13 @@ def test_combatant_unsuccessful_attack():
     au = AttackUtility
     attack_status = au.eval_attack(opponent, attack_value)
     assert attack_status == AttackStatus.MISS
+
+def test_can_be_damaged():
+    # if attack successful, hit 1 point
+    # if dice roll 20, hit 2 points
+    # when health 0, player is dead
+    assert
+
+def test_char_stat():
+    stat = CharacterStat(str, dex, const, wis, int, char)
+     assert 
