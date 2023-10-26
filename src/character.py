@@ -3,9 +3,9 @@ from Ability import modify
 from enum import Enum
 
 class Character():
-        abilities = []
+    abilities = []
 
-    def __init__(self, name, align):
+def __init__(self, name, align):
         self.name = name 
         self.align = align
         self.armor_class = 10
@@ -14,20 +14,19 @@ class Character():
         self.level_of = 0
         self.create_ability()
     
-    def attack(self, enemy):
+def attack(self, enemy):
         self.experience_points += 10
 
-    def level_up(self):
+def level_up(self):
         if self.experience_points == 100:
             self.level_of += 1 
 
-    def set_abilities(self, ability, score):
-        if ability in self.abilities and 1 <= score <= 20:
-            self.abilities[ability] = score
+# def set_abilities(self, ability, score):
+#         if ability in self.abilities and 1 <= score <= 20:
+#             self.abilities[ability] = score
     
-    def char_damaged(self, enemy):
-        eval_attack = AttackUtility
-        if eval_attack == True :
+def char_damaged(self, enemy):
+        if AttackUtility(enemy):
             self.hit_point -= 1
 
 
