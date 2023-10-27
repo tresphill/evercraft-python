@@ -4,6 +4,7 @@ from src.dice import Dice
 from src.AttackUtility import AttackUtility
 from src.AttackStatus import AttackStatus
 
+
 # create character
 def test_run_iteration1():
     # create character obj
@@ -61,15 +62,15 @@ def test_combatant_unsuccessful_attack():
     attack_status = au.eval_attack(opponent, attack_value)
     assert attack_status == AttackStatus.MISS
 
-# character can be damaged
-# def test_can_be_damaged():
-#     opponent = Character("Bob Not Dos", "Bad")
-#     health = opponent.hit_point
-#     opponent.char_damaged()
-#     assert opponent.hit_point == 4
-#     # if attack successful, hit 1 point
-#     # if dice roll 20, hit 2 points
-#     # when health 0, player is dead
+
+def test_can_be_damaged():
+    opponent = Character("Bob Not Dos", "Bad")
+    health = opponent.hit_point
+    opponent.char_damaged("Margot")
+    assert opponent.hit_point == 4
+    # if attack successful, hit 1 point
+    # if dice roll 20, hit 2 points
+    # when health 0, player is dead
     
 
 # character can gain exp
@@ -101,3 +102,4 @@ def test_get_ability_modifier():
     character = Character("Eve", "Neutral")
     character.set_ability_score("Intelligence", 5)
     assert character.get_ability_modifier("Intelligence") == -3
+

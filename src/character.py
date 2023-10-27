@@ -1,5 +1,5 @@
 from src.AttackUtility import AttackUtility
-from src.Ability import AbilityScore
+# from src.Ability import AbilityScore
 from enum import Enum
 
 class Character():
@@ -10,7 +10,6 @@ class Character():
         self.hit_point = 5
         self.experience_points = 1
         self.level_of = 0
-        #self.create_ability()
         self.abilities = {
             'Strength': 10,
             'Dexterity': 10,
@@ -19,13 +18,18 @@ class Character():
             'Intelligence': 10,
             'Charisma': 10
         }
-    
+
+
     def attack(self, enemy):
         self.experience_points += 10
 
     def level_up(self):
         if self.experience_points == 100:
-            self.level_of += 1 
+            self.level_of += 1
+            self.hit_point += 5
+        elif Character() == "Fighter" and self.experience_points == 100:
+            self.level_of += 1
+            self.hit_point += 10
         
     def set_ability_score(self, ability, score):
         if ability in self.abilities and 1 <= score <= 20:
